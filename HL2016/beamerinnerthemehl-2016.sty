@@ -51,6 +51,22 @@
 	\end{textblock*}
 }
 
+\defbeamertemplate*{subsection page}{hl}[1][]
+{
+    \begin{textblock*}{\paperwidth}(0pt,0pt)
+        \tikz[remember picture,overlay] {%
+            \draw[hl-2016orange1,line width=0.005\paperwidth] (0\paperwidth,-0.28\paperheight) -- (\paperwidth,-0.28\paperheight);
+            \draw[hl-2016bordo1,line width=0.002\paperwidth] (0\paperwidth,-0.285\paperheight) -- (\paperwidth,-0.285\paperheight);
+            \draw[hl-2016orange1,line width=0.006\paperwidth] (0\paperwidth,-0.67\paperheight) -- (\paperwidth,-0.67\paperheight);
+        }
+    \end{textblock*}
+
+    \begin{textblock*}{0.92\paperwidth}(0.05\paperwidth,0.39\paperheight)
+        \usebeamerfont{subsection title}\textcolor{hl-2016bordo1}{\insertsubsection}\par
+    \end{textblock*}
+}
+
+
 %change frame style
 %see /usr/share/texmf/tex/latex/beamer/beamerbaseframe.sty for example
 \define@key{beamerframe}{c}[true]{% centered
