@@ -1,0 +1,40 @@
+\mode<presentation>
+
+\DeclareOptionBeamer{titlepage}{\def\beamer@titlepage{#1}}
+\setbeamertemplate{title page}{default}{}
+
+% Title page
+\defbeamertemplate*{title page}{sveta-it}[1][]
+{
+	\hfill\includegraphics[width=0.75\paperwidth]{title.png}\hspace*{\fill}
+	
+    \begin{textblock*}{0.95\paperwidth}(0.028\paperwidth,0.83\paperheight)
+        \begin{beamercolorbox}[left]{frametitle}
+            \usebeamerfont{frametitle}\inserttitle\par%
+        \end{beamercolorbox}%
+    \end{textblock*}
+
+	\begin{textblock*}{0.95\paperwidth}(0.028\paperwidth,0.93\paperheight)
+		\begin{beamercolorbox}[left]{frametitle}
+			\usebeamerfont{author}\insertauthor\hfill\usebeamerfont{date}\insertdate
+		\end{beamercolorbox}%
+	\end{textblock*}
+    
+    \begin{textblock*}{\paperwidth}(0pt,0pt)
+        \tikz[remember picture,overlay] {%
+            \draw[sveta-analogy2,line width=0.06cm] (0.028\paperwidth,-0.8\paperheight) -- (0.97\paperwidth,-0.8\paperheight);
+        }
+    \end{textblock*}
+
+
+}
+
+%change frame style
+%see /usr/share/texmf/tex/latex/beamer/beamerbaseframe.sty for example
+\define@key{beamerframe}{c}[true]{% centered
+    \beamer@frametopskip=.0\paperheight\relax%
+    \def\beamer@initfirstlineunskip{}%
+}
+
+\mode<all>
+

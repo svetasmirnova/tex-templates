@@ -1,0 +1,30 @@
+\mode<presentation>
+
+% Requirement
+\RequirePackage{tikz}
+\usepackage{pgfplots}
+\usepackage{moreverb}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+
+\usetikzlibrary{positioning,calc}
+
+\usepackage[absolute,overlay]{textpos}
+
+\setbeamersize{text margin left=0pt,text margin right=0pt,mini frame offset=118cm}
+
+% Settings
+%use it for wide screens
+%\usepackage[orientation=landscape,size=custom,width=16,height=9.75,scale=0.5,debug]{beamerposter}
+
+\DeclareOptionBeamer{titlepage}{\PassOptionsToPackage{titlepage=#1}{beamertheme-inner}}
+\ProcessOptionsBeamer
+
+\usefonttheme{sveta-it}
+\usecolortheme{sveta-it}
+\useinnertheme{sveta-photos}
+\useoutertheme{sveta-photos}
+
+%\setbeamertemplate{navigation symbols}{}
+
+\mode<all>

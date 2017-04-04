@@ -1,0 +1,54 @@
+%bug in geometry if used with beamer
+\makeatletter\let\ifGm@compatii\relax\makeatother
+\documentclass{beamer}
+%\documentclass[aspectratio=169]{beamer}
+
+%\setbeameroption{show notes}
+%\setbeameroption{show only notes}
+
+%%% Работа с русским языком
+\usepackage{cmap}					% поиск в PDF
+\usepackage{mathtext} 				% русские буквы в формулах
+\usepackage[T1,T2A]{fontenc}		% кодировка
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}	% локализация и переносы
+
+\usepackage{microtype}
+\DisableLigatures{encoding = *, family = * }
+
+\usetheme{sveta-photos}
+
+\usepackage[normalem]{ulem}
+\usepackage{fancyvrb}
+\usepackage{xcolor,colortbl}
+\usepackage{array}
+
+\title[InnoDB Troubleshooting]{Template for Photos}
+\author{Sveta Smirnova}
+\date{April, 4, 2017}
+
+%\makeatletter
+%\def\verbatim@font{\normalsize\ttfamily}
+%\makeatother
+
+\graphicspath{{./images/}}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	\begin{frame}{Horizontal Image}
+		\hfill\includegraphics[width=0.81\paperwidth]{horizontal.png}\hspace*{\fill}
+	\end{frame}
+	
+	\begin{frame}{Vertical Image}
+		\hfill\includegraphics[width=0.455\paperwidth]{vertical.png}\hspace*{\fill}
+	\end{frame}
+
+	\begin{frame}{Horizontal Image with Very Long Text, so Much Long, too Long, Foo Bar Baz}
+		\hfill\includegraphics[width=0.81\paperwidth]{horizontal.png}\hspace*{\fill}
+	\end{frame}
+	
+\end{document}

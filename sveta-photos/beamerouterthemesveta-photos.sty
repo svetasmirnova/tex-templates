@@ -1,0 +1,17 @@
+\mode<presentation>
+
+\defbeamertemplate*{frametitle}{sveta-photos}[1][] {
+        \begin{textblock*}{0.95\paperwidth}(0.028\paperwidth,0.86\paperheight)
+            \begin{beamercolorbox}[left]{frametitle}
+                \usebeamerfont{frametitle}\insertframetitle%
+            \end{beamercolorbox}%
+        \end{textblock*}
+    
+        \begin{textblock*}{\paperwidth}(0pt,0pt)
+            \tikz[remember picture,overlay] {%
+                \draw[sveta-analogy2,line width=0.06cm] (0.028\paperwidth,-0.84\paperheight) -- (0.97\paperwidth,-0.84\paperheight);
+            }
+        \end{textblock*}
+}
+
+\mode<all>
