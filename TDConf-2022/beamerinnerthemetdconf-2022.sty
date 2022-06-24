@@ -1,0 +1,86 @@
+\mode<presentation>
+
+%\setbeamertemplate{frametitle}
+%{\fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);}
+
+\DeclareOptionBeamer{titlepage}{\def\beamer@titlepage{#1}}
+
+\setbeamertemplate{title page}{default}{}
+
+% Itemize items, tdconf-2022
+\setbeamertemplate{items}[circle]
+
+\setbeamertemplate{section in toc}
+{\leavevmode{\raise0.5pt\hbox{\textcolor{tdconf-2022bordo1}\textbullet}}\inserttocsection\par}
+
+\setbeamertemplate{itemize item}{\small\raise5pt\hbox{\textbullet}}
+\setbeamertemplate{itemize subitem}{\small\raise5pt\hbox{\textbullet}}
+\setbeamertemplate{itemize subsubitem}[square]
+
+\setbeamertemplate{itemize/enumerate body begin}{\usebeamerfont{itemize item}}
+\setbeamertemplate{itemize/enumerate subbody begin}{\usebeamerfont{itemize subitem}}
+
+% Title page
+\defbeamertemplate*{title page}{tdconf-2022}[1][]
+{
+    \begin{textblock*}{\paperwidth}(0pt,0pt)
+        \tikz[remember picture,overlay] {%
+            \draw[white,line width=0.004\paperwidth] (0.94\paperwidth,-0.55\paperheight) -- (0.94\paperwidth,-0.63\paperheight);
+        }
+    \end{textblock*}
+
+    \begin{textblock*}{0.39\paperwidth}(0.05\paperwidth,0.44\paperheight)
+            \begin{beamercolorbox}{title page header}
+                \usebeamerfont{title}\inserttitle\hfill%
+            \end{beamercolorbox}%
+			\begin{beamercolorbox}{author}
+				\hfill\usebeamerfont{author}\insertauthor\par%
+			\end{beamercolorbox}%
+			\begin{beamercolorbox}{date}
+				\hfill\usebeamerfont{date}\insertdate
+			\end{beamercolorbox}%
+    \end{textblock*}
+}
+
+\defbeamertemplate*{section page}{hl}[1][]
+{
+	\begin{textblock*}{\paperwidth}(0pt,0pt)
+		\tikz[remember picture,overlay] {%
+			\draw[tdconf-2022orange1,line width=0.005\paperwidth] (0\paperwidth,-0.28\paperheight) -- (\paperwidth,-0.28\paperheight);
+			\draw[tdconf-2022bordo1,line width=0.002\paperwidth] (0\paperwidth,-0.285\paperheight) -- (\paperwidth,-0.285\paperheight);
+			\draw[tdconf-2022orange1,line width=0.006\paperwidth] (0\paperwidth,-0.67\paperheight) -- (\paperwidth,-0.67\paperheight);
+		}
+	\end{textblock*}
+
+	\begin{textblock*}{0.6\paperwidth}(0.05\paperwidth,0.39\paperheight)
+    	\usebeamerfont{section title}\textcolor{tdconf-2022bordo1}{\insertsection}\par
+	\end{textblock*}
+}
+
+\defbeamertemplate*{subsection page}{hl}[1][]
+{
+    \begin{textblock*}{\paperwidth}(0pt,0pt)
+        \tikz[remember picture,overlay] {%
+            \draw[tdconf-2022orange1,line width=0.005\paperwidth] (0\paperwidth,-0.28\paperheight) -- (\paperwidth,-0.28\paperheight);
+            \draw[tdconf-2022bordo1,line width=0.002\paperwidth] (0\paperwidth,-0.285\paperheight) -- (\paperwidth,-0.285\paperheight);
+            \draw[tdconf-2022orange1,line width=0.006\paperwidth] (0\paperwidth,-0.67\paperheight) -- (\paperwidth,-0.67\paperheight);
+        }
+    \end{textblock*}
+
+    \begin{textblock*}{0.92\paperwidth}(0.05\paperwidth,0.39\paperheight)
+        \usebeamerfont{subsection title}\textcolor{tdconf-2022bordo1}{\insertsubsection}\par
+    \end{textblock*}
+}
+
+
+%change frame style
+%see /usr/share/texmf/tex/latex/beamer/beamerbaseframe.sty for example
+\define@key{beamerframe}{c}[true]{% centered
+	\beamer@frametopskip=.2\paperheight plus 1fill\relax%
+	\beamer@framebottomskip=0.5cm plus 1.5fill\relax%
+	\beamer@frametopskipautobreak=0pt plus .4\paperheight\relax%
+	\beamer@framebottomskipautobreak=0pt plus .6\paperheight\relax%
+	\def\beamer@initfirstlineunskip{}%
+}
+
+\mode<all>

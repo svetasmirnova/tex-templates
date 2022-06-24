@@ -2,3 +2,4 @@
 
 \himagef{title}{image}
 \vimagef{title}{image}
+\qritem{url}{text}

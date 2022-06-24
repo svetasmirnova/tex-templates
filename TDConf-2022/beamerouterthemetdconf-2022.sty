@@ -2,15 +2,18 @@
 
 
 % Frame title
-\defbeamertemplate*{background}{sveta-it}[1][]
+\defbeamertemplate*{background}{tdconf-2022}[1][]
 {
         \ifnum\c@framenumber=1%
 	        \hspace{0\paperwidth}
 	        {\includegraphics[height=\paperheight,keepaspectratio]{titlepage.png}}
+        \else
+			\hspace{0\paperwidth}
+			{\includegraphics[height=\paperheight,keepaspectratio]{page.png}}
         \fi%    
 }
 
-\defbeamertemplate*{frametitle}{sveta-it}[1][] {
+\defbeamertemplate*{frametitle}{tdconf-2022}[1][] {
         \begin{textblock*}{0.95\paperwidth}(0.028\paperwidth,0.08\paperheight)
             \begin{beamercolorbox}[left]{frametitle}
                 \usebeamerfont{frametitle}\insertframetitle%
@@ -19,25 +22,20 @@
         
         \begin{textblock*}{\paperwidth}(0pt,0pt)
         	\tikz[remember picture,overlay] {%
-        		\draw[sveta-analogy2,line width=0.06cm] (0.028\paperwidth,-0.21\paperheight) -- (0.97\paperwidth,-0.21\paperheight);
+        		\draw[tdconf-2022orange,line width=0.06cm] (0.028\paperwidth,-0.21\paperheight) -- (0.97\paperwidth,-0.21\paperheight);
         	}
         \end{textblock*}
 }
 
-\defbeamertemplate*{footline}{sveta-it}[1][] {
+\defbeamertemplate*{footline}{tdconf-2022}[1][] {
 	
 	\ifnum \insertpagenumber=1
 	\else
 	    \begin{textblock*}{\paperwidth}(0.025\paperwidth,0.96\paperheight)
 	            \begin{beamercolorbox}{framenumber}
-	                    \usebeamerfont{framenumber}\insertpagenumber%
+	                    \usebeamerfont{framenumber}\insertframenumber%
 	            \end{beamercolorbox}%
 	    \end{textblock*}
-
-		\begin{textblock*}{\paperwidth}(0.94\paperwidth,0.88\paperheight)
-			{\includegraphics[width=0.07\paperwidth,keepaspectratio]{mono2_blue.png}}
-		\end{textblock*}
-	
 	    \vskip0.3in%
     \fi
 }
